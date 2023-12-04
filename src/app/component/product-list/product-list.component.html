@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="card" *ngFor="let item of products">
+            <div class="card-header">
+                <img class="card-img" [src]="item.thumbnail" alt="{{item.title}}">
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">{{item.title}}</h2>
+                <p class="card-text">{{item.description}}</p>
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-primary" (click)="addToFavorites(item)"><i class="bi bi-cart4"></i> {{item.price}} €</button>
+                    <button class="btn btn-danger" (click)="addToCart(item)"><i class="bi bi-heart-fill"></i></button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- 
+<div class="container">
+    <h2>Cart</h2>
+    <div *ngFor="let product of prodSrv.getCartProducts()">
+      {{ product.title }} - Price: {{ product.price }}
+    </div>
+</div> -->

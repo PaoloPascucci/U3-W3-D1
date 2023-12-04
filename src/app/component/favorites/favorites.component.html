@@ -1,0 +1,22 @@
+<div class="container mt-4 todoList d-flex flex-column justify-content-center align-items-center">
+    <div *ngFor="let item of favorites">
+      <div class="card">
+        <div class="col-md-4">
+          <img [src]="item.thumbnail" alt="{{ item.title }}">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">{{ item.description }}</p>
+            <button class="btn btn-danger" (click)="removeFromFavorites(item)">
+              <i class="bi bi-heartbreak"></i> Remove from Favorites
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="favorites.length === 0">
+      Non ci sono Favoriti.
+    </div>
+  </div>
+  
